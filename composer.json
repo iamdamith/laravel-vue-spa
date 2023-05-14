@@ -1,8 +1,8 @@
 {
-    "name": "laravel/laravel",
+    "name": "iamdamith/laravel-vue-spa",
     "type": "project",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "description": "A Laravel-Vue SPA starter project template.",
+    "keywords": ["spa", "laravel", "vue", "tailwind-css", "pinia"],
     "license": "MIT",
     "require": {
         "php": "^8.1",
