@@ -66,6 +66,12 @@ jobs:
         mkdir -p database
         touch database/database.sqlite
         
+    - name: Install npm dependencies
+      run: npm install --no-audit --no-progress --silent
+
+    - name: Build client
+      run: npm run build
+        
     - name: Execute tests (Unit and Feature tests) via PHPUnit
       env:
         DB_CONNECTION: sqlite
