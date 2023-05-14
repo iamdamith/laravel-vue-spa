@@ -3,7 +3,7 @@
 <a href="https://github.com/iamdamith/laravel-vue-spa/actions"><img src="https://github.com/iamdamith/laravel-vue-spa/workflows/tests/badge.svg" alt="Build Status"></a>
 
 <p align="center">
-<img src="https://imgur.com/sIwRc75">
+<img src="https://i.imgur.com/sIwRc75.png">
 </p>
 
 
