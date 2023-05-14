@@ -1,6 +1,6 @@
 <p align="center"># Laravel-Vue SPA </p>
 
-<a href="https://github.com/iamdamith/laravel-vue-spa/actions"><img src="https://github.com/iamdamith/laravel-vue-spa/workflows/tests/badge.svg" alt="Build Status"></a>
+[![Laravel](https://github.com/iamdamith/laravel-vue-spa/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/iamdamith/laravel-vue-spa/actions/workflows/tests.yml)
 
 <p align="center">
 <img src="https://i.imgur.com/sIwRc75.png">
