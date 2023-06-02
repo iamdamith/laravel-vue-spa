@@ -28,11 +28,16 @@
     </div>
 
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+      <div class="errors pb-6" v-if="errors">
+        <ul class="errrors_list">
+          <li class="error" v-for="error in errors"> {{ error[0] }}</li>
+        </ul>
+      </div>
       <form class="space-y-6" action="#" method="POST">
         <div>
           <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
           <div class="mt-2">
-            <input id="email" v-model="email" type="email" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" required autofocus/>
+            <input id="email" name="email" v-model="email" type="email" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" required autofocus/>
           </div>
         </div>
 
@@ -41,14 +46,14 @@
             <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
           </div>
           <div class="mt-2">
-            <input id="password" v-model="password" type="password" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" required/>
+            <input id="password" name="password" v-model="password" type="password" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" required/>
           </div>
         </div>
 
         <div>
           <div class="flex items-center justify-between">
             <div class="flex justify-between">
-              <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Remember Me</label>
+              <label for="remember" class="block text-sm font-medium leading-6 text-gray-900">Remember Me</label>
               <input v-model="remember" type="checkbox" class="ml-2"/>
             </div>
             <div class="text-sm">
@@ -79,7 +84,8 @@
     data: () => ({
         email:"",
         password:"",
-        remember:false
+        remember:false,
+        errors:[]
       
     }),
     methods:{
@@ -91,7 +97,9 @@
         // Redirect home.
         this.$router.push({ name: 'dashboard' })
         } catch (error) {
-          console.error(error)
+          if (error.response && error.response.status ===422) {
+            this.errors = error.response.data.errors
+          }
         }
       }
     }
