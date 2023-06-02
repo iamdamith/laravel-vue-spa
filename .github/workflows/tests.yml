@@ -93,6 +93,7 @@ jobs:
     - name: Run Dusk tests
       env:
         APP_URL: "http://127.0.0.1:8000"
+        VITE_VUE_APP_API_URL: "http://127.0.0.1:8000/api"
       run: php artisan dusk
 
     - name: Upload screenshots
