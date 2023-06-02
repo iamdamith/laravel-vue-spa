@@ -11,10 +11,10 @@
 
 - Laravel 10
 - Vue + VueRouter + Pinia + Tailwind CSS + ESlint
-- Pages with  custom layouts
+- Pages with custom layouts
 - Login, register and Dashboard pages
 - Authentication with JWT
-- Tailwind UI
+- Tailwind UI 
 
 ## Installation
 
